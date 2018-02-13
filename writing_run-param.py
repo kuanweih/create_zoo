@@ -14,7 +14,7 @@ f = open('{0}/run-10MPC.param'.format(fastpm_path),'w')
 
 f.write('%  Relevant files \n')
 f.write('InitCondFile       ../../ICs/{0}/IC \n'.format(con))
-f.write('OutputDir          {0} \n'.format(con))
+f.write('OutputDir          ../{0} \n'.format(con))
 f.write('TreeCoolFile       /home/kuanweih/CaseMP/InputMP/inputfiles/TREECOOL_fg_june11 \n')
 f.write('MetalCoolFile      /home/kuanweih/CaseMP/InputMP/inputfiles/cooling_metal_UVB.hdf5 \n')
 f.write(' \n')
