@@ -15,7 +15,7 @@ if constrain_arg == 'constrain':
 else:
     f.write('InitCondFile                    ../fastpm/results-za/fastpm_0.0100 \n')
 
-f.write('OutputDir                       ../constrained \n')
+f.write('OutputDir                       .. \n')
 f.write('FileBase                        IC \n')
 f.write('Omega0                          0.2814          % Total matter density  (at z=0) \n')
 f.write('OmegaLambda                     0.7186          % Cosmological constant (at z=0) \n')
