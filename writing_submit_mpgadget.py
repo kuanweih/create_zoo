@@ -23,6 +23,6 @@ f.write('source  ~/setup.sh  \n')
 
 f.write('ROOT=/physics2/kuanweih/project_BH_seedmass \n')
 
-f.write('mpirun  -np  16  ./$ROOT/MP-Gadget/MP-Gadget  run-10MPC.param  1>stdout  2>stderr \n')
+f.write('mpirun  -np  16  $ROOT/MP-Gadget/MP-Gadget  run-10MPC.param  1>stdout  2>stderr \n')
 
 f.close()
