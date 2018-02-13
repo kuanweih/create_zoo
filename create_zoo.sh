@@ -2,7 +2,7 @@
 
 
 # Make files named with the random seed (defined as a 6 digits string)
-randomseed=000034
+randomseed=090585
 mkdir  run_10Mpc_$randomseed
 
 cd  run_10Mpc_$randomseed
