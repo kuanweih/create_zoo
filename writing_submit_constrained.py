@@ -21,7 +21,7 @@ f.write('cd $PBS_O_WORKDIR \n')
 f.write('#source  ~yfeng1/local/bin/setup.sh \n')
 f.write('source  ~/setup.sh  \n')
 
-f.write('ROOT = /physics2/kuanweih/project_BH_seedmass \n')
+f.write('ROOT=/physics2/kuanweih/project_BH_seedmass \n')
 f.write('mpirun  -np  16  $ROOT/Constrained/build/Cons-GenIC  param_Constrained.param  1>stdout  2>stderr \n')
 
 f.close()
