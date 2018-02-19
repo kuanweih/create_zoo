@@ -1,22 +1,24 @@
 #!/bin/bash
 
 
-# Make files named with the random seed (defined as a 6 digits string)
-randomseed=090585
+# Create main file named with the random seed (defined as a 6 digits string)
+randomseed=000000
 mkdir  run_10Mpc_$randomseed
 
+# Work under the main directory
 cd  run_10Mpc_$randomseed
-mkdir  ICs  Run_seed5e3  Run_seed5e4  Run_seed5e5
 
+# Name files
+cons='Con_0  Con_1  Con_2  Con_3'
 ics_runs='ICs  Run_seed5e3  Run_seed5e4  Run_seed5e5'
-for i in $ics_runs; do
-    mkdir  $i/Con_0  $i/Con_1  $i/Con_2
-done
-
 runs='Run_seed5e3  Run_seed5e4  Run_seed5e5'
-cons='Con_0  Con_1  Con_2'
-for con in $cons; do
 
+# Create files
+for con in $cons; do
+    for i in $ics_runs; do
+        mkdir  $i
+        mkdir  $i/$con
+    done
     mkdir  ICs/$con/fastpm  ICs/$con/constrained
     python  ../writing_standard-lua.py  ICs/$con/fastpm  $randomseed  $con
     python  ../writing_submit_fastpm.py  ICs/$con/fastpm  constrain
@@ -29,5 +31,6 @@ for con in $cons; do
     done
 done
 
+# Deal cases without constraints (Con_0)
 python  ../writing_submit_fastpm.py  ICs/Con_0/fastpm  noconstain
 python  ../writing_para_con-param.py  ICs/Con_0/constrained  noconstrain
