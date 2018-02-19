@@ -24,8 +24,8 @@ f.write('#source  ~yfeng1/local/bin/setup.sh \n')
 f.write('source  ~/setup.sh  \n')
 
 if constrain_arg == 'constrain':
-    f.write('mpirun  -np  96  /physics2/kuanweih/project_BH_seedmass/fastpm/src/fastpm  standard.lua  za  constrain  1>stdout  2>stderr \n')
+    f.write('mpirun  -np  16  /physics2/kuanweih/project_BH_seedmass/fastpm/src/fastpm  standard.lua  za  constrain  1>stdout  2>stderr \n')
 else:
-    f.write('mpirun  -np  96  /physics2/kuanweih/project_BH_seedmass/fastpm/src/fastpm  standard.lua  za  1>stdout  2>stderr \n')
+    f.write('mpirun  -np  16  /physics2/kuanweih/project_BH_seedmass/fastpm/src/fastpm  standard.lua  za  1>stdout  2>stderr \n')
 
 f.close()
