@@ -14,11 +14,15 @@ ics_runs='ICs  Run_seed5e3  Run_seed5e4  Run_seed5e5'
 runs='Run_seed5e3  Run_seed5e4  Run_seed5e5'
 
 # Create files
-for con in $cons; do
-    for i in $ics_runs; do
-        #mkdir  $i
+for i in $ics_runs; do
+    mkdir  $i
+    for con in $cons; do
         mkdir  $i/$con
     done
+done
+
+# Create para and pbs files
+for con in $cons; do
     mkdir  ICs/$con/fastpm  ICs/$con/constrained
     python  ../writing_standard-lua.py  ICs/$con/fastpm  $randomseed  $con
     python  ../writing_submit_fastpm.py  ICs/$con/fastpm  constrain
