@@ -16,7 +16,7 @@ runs='Run_seed5e3  Run_seed5e4  Run_seed5e5'
 # Create files
 for con in $cons; do
     for i in $ics_runs; do
-        mkdir  $i
+        #mkdir  $i
         mkdir  $i/$con
     done
     mkdir  ICs/$con/fastpm  ICs/$con/constrained
