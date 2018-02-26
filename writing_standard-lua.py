@@ -4,17 +4,21 @@ parser = argparse.ArgumentParser()
 parser.add_argument('path')
 parser.add_argument('randomseed')
 parser.add_argument('constrain')
+parser.add_argument('boxsize')
+parser.add_argument('n_particle')
 args = parser.parse_args()
 
 fastpm_path = args.path
 randomseednumber = args.randomseed
 constrain_arg = args.constrain
+boxsize = args.boxsize
+n_particle = args.n_particle
 
 f = open('{0}/standard.lua'.format(fastpm_path),'w')
 
 f.write('-- parameter file for fastpm \n')
-f.write('nc = 176 \n')
-f.write('boxsize = 10.0   -- Mpc \n')
+f.write('nc = {0} \n'.format(n_particle))
+f.write('boxsize = {0}.0   -- Mpc \n'.format(boxsize))
 
 f.write("if args[1] == 'za' then \n")
 f.write('    za = true \n')

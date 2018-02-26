@@ -4,11 +4,15 @@ parser = argparse.ArgumentParser()
 parser.add_argument('path')
 parser.add_argument('bhseed')
 parser.add_argument('con')
+parser.add_argument('boxsize')
+parser.add_argument('n_particle')
 args = parser.parse_args()
 
 fastpm_path = args.path
 bhseedmass = str(args.bhseed)
 con = args.con
+boxsize = args.boxsize
+n_particle = args.n_particle
 
 f = open('{0}/run-10MPC.param'.format(fastpm_path),'w')
 
@@ -29,7 +33,7 @@ f.write('DomainOverDecompositionFactor 8 \n')
 f.write(' \n')
 f.write('%EnableAggregatedIO 0 \n')
 f.write(' \n')
-f.write('Nmesh         176 \n')
+f.write('Nmesh         {0} \n'.format(n_particle))
 f.write('NumWriters     16 \n')
 f.write(' \n')
 f.write('% CPU time -limit \n')
@@ -47,7 +51,7 @@ f.write('Omega0              0.2814        % Total matter density  (at z=0) \n')
 f.write('OmegaLambda         0.7186        % Cosmological constant (at z=0) \n')
 f.write('OmegaBaryon         0.0464        % Baryon density        (at z=0) \n')
 f.write('HubbleParam         0.697         % Hubble paramater (may be used for power spec parameterization) \n')
-f.write('BoxSize             10.0 \n')
+f.write('BoxSize             {0}.0 \n'.format(boxsize))
 f.write(' \n')
 f.write('CoolingOn             1 \n')
 f.write('StarformationOn       1 \n')

@@ -3,10 +3,12 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('path')
 parser.add_argument('constrain')
+parser.add_argument('boxsize')
 args = parser.parse_args()
 
 fastpm_path = args.path
 constrain_arg = args.constrain
+boxsize = args.boxsize
 
 f = open('{0}/param_Constrained.param'.format(fastpm_path),'w')
 
@@ -22,7 +24,7 @@ f.write('OmegaLambda                     0.7186          % Cosmological constant
 f.write('OmegaBaryon                     0.0464          % Baryon density        (at z=0) \n')
 f.write('HubbleParam                     0.697           % Hubble paramater (may be used for power spec parameterization) \n')
 f.write('TimeBegin                       0.01            % scale factor \n')
-f.write('BoxSize                         10.0            % Mpc per side \n')
+f.write('BoxSize                         {0}.0            % Mpc per side \n'.format(boxsize))
 f.write('ProduceGas                      1               % 0:off, 1:on \n')
 f.write('MaxMemSizePerCore               1800 \n')
 f.write('NumPartPerFile                  131072 \n')
