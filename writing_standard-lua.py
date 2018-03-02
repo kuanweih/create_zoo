@@ -194,7 +194,7 @@ if   constrain_arg == 'Con_1':
 elif constrain_arg == 'Con_2':
     f.write('        {boxsize * 0.5, boxsize * 0.5, boxsize * 0.5, 2.0}  \n')
 elif constrain_arg == 'Con_3':
-    f.write('        {boxsize * 0.5, boxsize * 0.5, boxsize * 0.5, 1.5}  \n')
+    f.write('        {boxsize * 0.5, boxsize * 0.5, boxsize * 0.5, 3.0}  \n')
 else:
     f.write('        {boxsize * 0.5, boxsize * 0.5, boxsize * 0.5, 0.0}  \n')
 
