@@ -7,7 +7,7 @@ Another bash script to only generate ics: create_ic.sh
  
 
 # execute
-bash create_zoo.sh <br>
-bash add_con_zoo.sh
+```bash create_zoo.sh``` <br>
+```bash add_con_zoo.sh```
 
-bash create_ic.sh 
+```bash create_ic.sh``` 
